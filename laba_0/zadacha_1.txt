@@ -1,0 +1,21 @@
+n=int(input())
+div_chet=0
+div_nechet=0
+chet=0
+nechet=0
+for i in range(0,n):
+    x=int(input())
+    if x%33==0 and x%2==0 and x>div_chet:
+       div_chet=x
+    elif x%33==0 and x%2!=0 and x>div_nechet:
+       div_nechet=x
+    elif x%2==0 and x>chet:
+       chet=x
+    elif x%2!=0 and x>nechet:
+       nechet=x
+if chet!=0 and div_chet!=0 and (chet+div_chet>chet+nechet):
+    print(chet,div_chet)
+elif nechet!=0 and div_nechet!=0 and (chet+div_chet<chet+nechet):
+    print(nechet,div_nechet)
+else:
+    print("0 0")

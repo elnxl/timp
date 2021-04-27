@@ -1,0 +1,14 @@
+m = 120
+r = [0] * m
+elem_1 = 0
+elem_2 = 0
+n = int(input())
+for i in range(n):
+    x = int(input())
+    p = x % m;
+    if r[(m - p) % m] > x and r[(m - p) % m] + x > elem_1 + elem_2:
+        elem_1 = r[(m - p) % m]
+        elem_2 = x;
+    if x > r[p]:
+        r[p] = x
+print(elem_1, elem_2)
